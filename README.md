@@ -4,7 +4,7 @@ An All in one tool to make your hacking easier:)
 
 This tool contains pre-built tools from the community and it has tools from GO and Python. I have built this tool to make the hacking easier since you will find all the tools on one place and these can be used accordingly as per your need. If you are new to recon thing, this might help you in using multiple tools from a single script. Also, this tool will install all the necessary scripts itself. Feel free to contribute if you have ideas:)
 
-#####NOTE : Orignal tool repo is https://github.com/ManasHarsh/Cobra . 
+##### NOTE : Orignal tool repo is https://github.com/ManasHarsh/Cobra . 
 
 
 
@@ -18,10 +18,12 @@ This tool contains pre-built tools from the community and it has tools from GO a
 # Usage:
 ./Cobra.sh
 
-#What's new :
+# What's new :
 * Now you can install all tools by entering 200 
 * Why 200? because it will make you request response ok.
 * Added aquatone, path set for go  into installation process.
+
+
 # Credits:
 
 * ManasHarsh(https://github.com/ManasHarsh/Cobra) 
