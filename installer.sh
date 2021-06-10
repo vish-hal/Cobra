@@ -2,38 +2,57 @@
 
 echo "checking your system and setting up the environment: "
 echo ""
-sudo apt-get -y update ;
-sudo apt-get -y upgrade ;
-sudo apt install golang;
-sudo apt install python3;
-sudo apt install python3-pip;
-sudo apt install git;
-echo "export GOPATH=$HOME/go " >> ~/.profile ;
-echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.profile ;
-source ~/.profile ;
+sudo apt-get -y update 
+sudo apt-get -y upgrade 
+sudo apt install python3
+sudo apt-get install -y cargo
+sudo apt-get install libpcap-dev 
+sudo apt install python3-pip
+sudo apt install git
+pip install jsbeautifier 
+sudo snap install go --classic 
+echo "alias cobra='~/Cobra/Cobra.sh'" >> ~/.bashrc
+echo "alias Cobra='~/Cobra/Cobra.sh'" >> ~/.bashrc
+echo 'export GOPATH=$HOME/go ; ' >> ~/.bashrc 
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin ;' >> ~/.bashrc
+source ~/.bashrc
 echo "installing your assets, please wait:)"
 echo ""
-GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/cmd/subfinder; #1
-GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx #2
-GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei; #3
-git clone https://github.com/projectdiscovery/nuclei-templates; #3
-GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx; #4
-go get github.com/tomnomnom/hacks/waybackurls; #5
-GO111MODULE=on go get -u -v github.com/lc/gau; #6
-GO111MODULE=on go get -v github.com/projectdiscovery/naabu/v2/cmd/naabu; #7
-go get github.com/michenriksen/aquatone #8
-go get github.com/hakluke/hakrawler; #9
-go get -u github.com/ffuf/ffuf; #10
-git clone https://github.com/maurosoria/dirsearch #11
-go get -v github.com/OWASP/Amass/v3/...; #12
-GO111MODULE=on go get -u -v github.com/hahwul/dalfox; #13
-git clone https://github.com/findomain/findomain.git; #14
-git clone https://github.com/s0md3v/Arjun;  #15
-git clone https://github.com/GerbenJavado/LinkFinder; #16
-git clone https://github.com/m4ll0k/SecretFinder; #17
-git clone https://github.com/devanshbatham/ParamSpider; #18
-git clone https://github.com/s0md3v/Corsy.git; #19
-git clone https://github.com/hisxo/gitGraber.git; #20
-git clone https://github.com/lobuhi/byp4xx.git; #21
-go get github.com/haccer/subjack; #22
+mkdir tools
+cd tools
+GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder; 
+GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx ;
+GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei;
+nuclei -ut;
+GO111MODULE=on go get -u -v github.com/projectdiscovery/httpx/cmd/httpx; 
+go get github.com/tomnomnom/hacks/waybackurls; 
+GO111MODULE=on go get -u -v github.com/lc/gau; 
+GO111MODULE=on go get -v github.com/projectdiscovery/naabu/v2/cmd/naabu; 
+go get github.com/michenriksen/aquatone 
+go get github.com/hakluke/hakrawler; 
+go get -u github.com/ffuf/ffuf; 
+git clone https://github.com/maurosoria/dirsearch
+pip3 install -r dirsearch/requirements.txt; 
+go get -v github.com/OWASP/Amass/v3/...; 
+GO111MODULE=on go get -u -v github.com/hahwul/dalfox; 
+git clone https://github.com/findomain/findomain.git
+cd findomain
+cargo build --release
+sudo cp target/release/findomain /usr/bin/; 
+cd .. 
+pip3 install arjun;  
+git clone https://github.com/GerbenJavado/LinkFinder; 
+git clone https://github.com/m4ll0k/SecretFinder; 
+git clone https://github.com/devanshbatham/ParamSpider; 
+git clone https://github.com/s0md3v/Corsy.git; 
+git clone https://github.com/hisxo/gitGraber.git;
+git clone https://github.com/lobuhi/byp4xx.git; 
+go get github.com/haccer/subjack;
+echo "Downloading Wordlist into Cobra/Wordlists" 
+cd ~/Cobra
+mkdir Wordlists
+cd Wordlists
+git clone https://github.com/fuzz-security/SuperWordlist
+git clone https://github.com/fuzzdb-project/fuzzdb
+git clone https://github.com/danielmiessler/SecLists
 echo "we are ready! lets go!!"

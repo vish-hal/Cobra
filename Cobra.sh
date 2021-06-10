@@ -85,7 +85,7 @@ case $number in
 	11)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/dirsearch/dirsearch.py -u $domain -e all
+		python3 ~/Cobra/tools/dirsearch/dirsearch.py -u $domain -e all
 		;;
 	
 	12)
@@ -116,50 +116,50 @@ case $number in
 	16)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/LinkFInder/linkfinder.py -i https://$domain -d 
+		python3 ~/Cobra/tools/LinkFinder/linkfinder.py -i https://$domain -d 
 		;;
 
 	17)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/secretfinder/SecretFinder.py -i $domain -o output.html
+		python3 ~/Cobra/tools/SecretFinder/SecretFinder.py -i $domain -o output.html
 		;;
 
 	18)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/ParamSpider/paramspider.py --domain $domain
+		python3 ~/Cobra/tools/ParamSpider/paramspider.py --domain $domain
 		;;
 
 	19)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/Corsy/corsy.py -u https://$domain
+		python3 ~/Cobra/tools/Corsy/corsy.py -u https://$domain
 		;;
 
 	
 	20)
 		echo -n "Enter the domain: "
 		read domain
-		python3 ~/gitGraber/gitGraber.py -k keywordsfile.txt \"$domain\" -s
+		python3 ~/Cobra/tools/gitGraber/gitGraber.py -k keywordsfile.txt \"$domain\" -s
 		;;
 
 	21)
 		echo -n "Enter the URL: "
 		read  url
-		~/byp4xx/./byp4xx.sh $url
+		~/Cobra/tools/byp4xx/./byp4xx.sh $url
 		;;
 		
 	22) 
 	
         	echo -n "Enter your file: "
 		read  file
-		./subjack -w $file -t 100 -timeout 30 -o results.txt -ssl
+		subjack -w $file -t 100 -timeout 30 -o results.txt -ssl
 		;;
 
        200) 
 	
-        	./installer.sh
+        	~/Cobra/installer.sh
         	;;
 		
 	*)	
