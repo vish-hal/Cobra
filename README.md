@@ -13,7 +13,7 @@ This tool contains pre-built tools from the community and it has tools from GO a
 * git clone https://github.com/vish-hal/Cobra.git
 * cd Cobra
 * chmod +x *.sh
- **Note:** You Should clone Cobra in home directory for better experience.
+* **Note:** You Should clone Cobra in home directory for better experience.
 
 
 # Usage:
