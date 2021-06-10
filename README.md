@@ -19,9 +19,9 @@ This tool contains pre-built tools from the community and it has tools from GO a
 # Usage:
 ``` ./Cobra.sh ```
 
-You can type **cobra / Cobra** into terminal to access Cobra script .
-Enter **200** to install and setup tools.
-**Note:** Typing **cobra / Cobra** into terminal will only work if you have installed tools using script 
+* You can type **cobra / Cobra** into terminal to access Cobra script .
+* Enter **200** to install and setup tools.
+* **Note:** Typing **cobra / Cobra** into terminal will only work if you have installed tools using script 
 
 # What's new :
 * Now you can install all tools by entering 200 
